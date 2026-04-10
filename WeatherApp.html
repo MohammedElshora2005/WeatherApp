@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WeatherApp | Modern Weather Forecast</title>
+  <link rel="stylesheet" href="WeatherApp.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <i class="fas fa-cloud-sun"></i>
+        <span>WeatherApp</span>
+      </div>
+
+      <div class="search-wrapper">
+        <div class="search-box">
+          <i class="fas fa-search"></i>
+          <input type="text" id="cityInput" placeholder="Search city..." autocomplete="off">
+          <button id="searchBtn">Go</button>
+        </div>
+        <button id="currentLocationBtn" class="location-btn">
+          <i class="fas fa-location-dot"></i>
+          Current Location
+        </button>
+      </div>
+
+      <div class="favorites">
+        <h3>⭐ Favorites</h3>
+        <div id="favoritesList" class="favorites-list"></div>
+        <button id="addToFavoritesBtn" class="add-fav-btn">
+          <i class="fas fa-plus"></i> Add current city
+        </button>
+      </div>
+
+      <div class="settings">
+        <div class="setting-item">
+          <label>🌡️ Unit</label>
+          <div class="unit-toggle">
+            <button id="celsiusBtn" class="unit-option active">°C</button>
+            <button id="fahrenheitBtn" class="unit-option">°F</button>
+          </div>
+        </div>
+        <div class="setting-item">
+          <label>🔄 Auto Refresh</label>
+          <label class="switch">
+            <input type="checkbox" id="autoRefreshCheck">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="top-bar">
+        <button id="refreshAllBtn" class="refresh-btn">
+          <i class="fas fa-sync-alt"></i> Refresh All
+        </button>
+        <button id="themeToggle" class="theme-btn">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+
+      <!-- Current Weather -->
+      <div id="currentWeather" class="weather-card"></div>
+
+      <!-- Forecast -->
+      <div class="forecast-section">
+        <h2><i class="fas fa-calendar-week"></i> 5-Day Forecast</h2>
+        <div id="forecastContainer" class="forecast-grid"></div>
+      </div>
+
+      <!-- Map -->
+      <div class="map-section">
+        <h2><i class="fas fa-map-marked-alt"></i> Weather Map</h2>
+        <div id="map" class="map-container"></div>
+      </div>
+
+      <!-- Statistics -->
+      <div class="stats-section">
+        <h2><i class="fas fa-chart-line"></i> Statistics</h2>
+        <div id="statsContainer" class="stats-grid"></div>
+      </div>
+    </main>
+  </div>
+
+  <div id="notification" class="notification"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
+  <script src="WeatherApp.js"></script>
+</body>
+</html>
